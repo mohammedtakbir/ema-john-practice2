@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { addToDb, getStoredCart } from '../../utilities/FakeDb';
+import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/FakeDb';
 import Product from '../Product/Product';
 import Cart from '../../components/Cart/Cart';
 import './Shop.css';
@@ -22,6 +22,11 @@ const Shop = () => {
         }
         setCart(newCart);
         addToDb(selectedProduct.id);
+    };
+    //* clear cart
+    const clearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
     }
     return (
         <>
@@ -36,7 +41,7 @@ const Shop = () => {
                     }
                 </div>
                 <div className="cart-container bg-orange-300 p-5">
-                    <Cart cart={cart} />
+                    <Cart cart={cart} clearCart={clearCart} />
                 </div>
             </div>
         </>

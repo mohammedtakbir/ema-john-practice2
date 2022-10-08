@@ -1,0 +1,5 @@
+.custom-grid3{
+    display: grid;
+    grid-template-columns: 65% 20%;
+    gap: 5%;
+}
