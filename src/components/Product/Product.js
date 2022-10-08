@@ -4,7 +4,7 @@ const Product = ({ product, handleAddToCart }) => {
     const { img, name, price, seller, ratings } = product;
     return (
         <div className='border p-4 rounded-lg relative'>
-            <img className='rounded-lg' src={img} alt="" />
+            <img className='rounded-lg' src={img ? img : ''} alt="" />
             <div className='mt-5 mb-7'>
                 <h2 className='text-xl font-semibold mb-1'>{name}</h2>
                 <h3 className='font-medium'>Price: ${price}</h3>
