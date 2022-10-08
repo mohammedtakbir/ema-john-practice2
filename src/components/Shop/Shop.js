@@ -6,16 +6,16 @@ import Product from '../Product/Product';
 import Cart from '../../components/Cart/Cart';
 import './Shop.css';
 const Shop = () => {
-    const {products, storedCart} = useLoaderData();
-    console.log(storedCart, products)
-    const [cart, setCart] = useState([]);
+    const { products, savedCart } = useLoaderData();
+    
+    const [cart, setCart] = useState(savedCart);
     const handleAddToCart = (selectedProduct) => {
         const isExist = cart.find(product => product.id === selectedProduct.id);
         let newCart = [];
-        if(!isExist){
+        if (!isExist) {
             selectedProduct.quantity = 1;
             newCart = [...cart, selectedProduct]
-        }else{
+        } else {
             isExist.quantity += 1;
             const rest = cart.filter(product => product.id !== selectedProduct.id);
             newCart = [...rest, isExist];
@@ -28,11 +28,11 @@ const Shop = () => {
             <div className="shop-container container mx-auto custom-grid1">
                 <div className="products-container custom-grid2 mt-16">
                     {
-                        products?.map(product => <Product 
+                        products?.map(product => <Product
                             key={product.id}
                             product={product}
                             handleAddToCart={handleAddToCart}
-                            />)
+                        />)
                     }
                 </div>
                 <div className="cart-container bg-orange-300 p-5">
