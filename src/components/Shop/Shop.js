@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { addToDb } from '../../utilities/FakeDb';
 import Product from '../Product/Product';
-import './Shop.css'
+import Cart from '../../components/Cart/Cart';
+import './Shop.css';
 const Shop = () => {
     const products = useLoaderData();
     const [cart, setCart] = useState([]);
@@ -19,7 +20,7 @@ const Shop = () => {
             newCart = [...rest, isExist];
         }
         setCart(newCart);
-        addToDb(selectedProduct.id)
+        addToDb(selectedProduct.id);
     }
     return (
         <>
@@ -33,8 +34,8 @@ const Shop = () => {
                             />)
                     }
                 </div>
-                <div className="cart-container">
-                    <h2 className='font-bold text-2xl'>Selected Item: </h2>
+                <div className="cart-container bg-orange-300 p-5">
+                    <Cart cart={cart} />
                 </div>
             </div>
         </>
