@@ -20,7 +20,10 @@ const Navbar = () => {
                     }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/inventory'>Inventory</NavLink>
                     <NavLink style={({isActive}) => {
                         return isActive ? {color: 'orange'} : undefined
-                    }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/about'>About</NavLink>
+                    }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/login'>Login</NavLink>
+                    <NavLink style={({isActive}) => {
+                        return isActive ? {color: 'orange'} : undefined
+                    }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/signup'>Sign Up</NavLink>
                 </div>
             </div>
 
