@@ -27,6 +27,9 @@ const Navbar = () => {
                     <NavLink style={({ isActive }) => {
                         return isActive ? { color: 'orange' } : undefined
                     }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/inventory'>Inventory</NavLink>
+                    <NavLink style={({ isActive }) => {
+                        return isActive ? { color: 'orange' } : undefined
+                    }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/shipping'>Shipping</NavLink>
 
                     {user?.email ?
                         <NavLink onClick={handleSignOut} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300'>Sign Out</NavLink> :
@@ -39,18 +42,6 @@ const Navbar = () => {
                             }} className='no-underline ml-10 text-white md:text-lg hover:text-orange-300' to='/signup'>Sign Up</NavLink>
                         </>
                     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
