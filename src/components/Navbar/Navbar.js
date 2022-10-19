@@ -2,7 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
-import logo from '../../images/Logo.svg'
+import logo from '../../images/Logo.svg';
+
 const Navbar = () => {
     const { user, userSignOut } = useContext(AuthContext);
     //* Sign Out
@@ -10,7 +11,7 @@ const Navbar = () => {
         userSignOut()
             .then(() => { })
             .catch(err => console.error(err))
-    }
+    };
     return (
         <div className='bg-[#1C2B35] py-4'>
             <div className='flex container mx-auto justify-between items-center md:px-0 px-3'>

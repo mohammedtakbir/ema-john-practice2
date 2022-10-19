@@ -19,6 +19,7 @@ const UserContext = ({children}) => {
 
     //* Login an user
     const userLogIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 

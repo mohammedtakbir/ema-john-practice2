@@ -15,6 +15,7 @@ const SignUp = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
 
+        
         //* password validation
         if(password.length < 6){
             setError('Password should be at least 6 character.')
