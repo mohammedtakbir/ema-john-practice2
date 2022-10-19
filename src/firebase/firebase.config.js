@@ -16,3 +16,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
+
+//* Firebase project name----> Ema-john-Practice2
+//* project link--->  https://console.firebase.google.com/u/0/project/ema-john-practice2/overview 
