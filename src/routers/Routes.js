@@ -11,15 +11,17 @@ import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
-        path: '/', element: <Main />, children: [
+        path: '/',
+        element: 
+        <Main />, children: [
             {
                 index: true,
-                loader: ProductsAndCartLoader,
+                // loader: ProductsAndCartLoader,
                 element: <Shop />
             },
             {
                 path: '/shop',
-                loader: ProductsAndCartLoader,
+                // loader: ProductsAndCartLoader,
                 element: <Shop />
             },
             {
@@ -41,9 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/shipping',
-                element: <PrivateRoute>
-                    <Shipping />
-                </PrivateRoute>
+                element: <PrivateRoute><Shipping /></PrivateRoute>
             }
         ]
     }
